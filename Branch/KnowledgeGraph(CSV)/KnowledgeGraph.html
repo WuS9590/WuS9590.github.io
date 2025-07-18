@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 引入CSS文件 -->
+    <link rel="stylesheet" href="./CSS/Fonts.css">
+    <link rel="stylesheet" href="./CSS/KnowledgeGraph.css">
+</head>
+
+<body>
+    <h1>KnowledgeGraph(CSV)</h1>
+    <!-- 功能按钮区 -->
+    <div id="query-container">
+        <input type="text" id="query-input" placeholder="不区分大小写 逗号分割">
+        <button id="query-button">查询</button>
+        
+        <button id="add-layer-button">增加</button>
+        <button id="refresh-button">刷新</button>
+        
+        <button id="show-query-label">
+            单显
+            <input type="checkbox" id="isolate-checkbox-dx">
+        </button>
+        
+        <button id="show-layer-button">
+            层显
+            <input type="checkbox" id="isolate-checkbox-cx">
+        </button>
+        
+        <label for="top-node-count" id="top-node">筛选:</label>
+        <input type="number" id="top-node-count" min="1" value="1">
+        
+        <select id="save-format">
+            <option value="png">PNG</option>
+            <option value="jpg">JPG</option>
+        </select>
+        <button id="save-button">保存</button>
+        
+        <button id="custom-file-upload">上传</button>
+        <input type="file" id="file-upload" accept=".json,.csv">
+        <span id="file-name-display">No file</span>
+        <button id="update-button">更新</button>            
+    </div>
+    
+    <!-- 图谱显示区 -->
+    <div id="graph-container"></div>
+
+    <!-- 引入基础JS库 -->
+    <script src="./JS/Base/d3.min.js"></script>
+    <script src="./JS/Base/FileSaver.min.js"></script>
+    <script src="./JS/Base/html2canvas.min.js"></script>
+
+    <!-- 自定义模块（按依赖顺序） -->
+    <script src="./JS/globals.js"></script>
+    <script src="./JS/graphCore.js"></script>
+    <script src="./JS/graphInteraction.js"></script>
+    <script src="./JS/dataManager.js"></script> <!-- 新增CSV解析功能 -->
+    <script src="./JS/graphExport.js"></script>
+    <script src="./JS/eventBinder.js"></script>
+    
+    <!-- 初始化脚本 -->
+    <script>
+    window.onload = function() {
+        graphCore.init();
+        dataManager.loadLocalData(); // 加载本地默认数据
+        eventBinder.bindAllEvents();
+    };
+    </script>
+</body>
+</html>

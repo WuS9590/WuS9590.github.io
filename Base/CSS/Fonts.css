@@ -1,0 +1,58 @@
+/* 6.1 一级标题样式 */
+h1 {
+    color: black; /* 文字颜色为黑色 */
+    font-size: 2.0rem; /* 字体大小2.5rem */
+    text-align: center; /* 文本居中对齐 */
+    background-color: #E6E6FA; /* 背景颜色为淡紫色 */
+    padding: 0.5rem;
+    border-radius: 5px; /* 圆角边框 */
+    margin-top: 0rem;
+}
+
+/* 6.2 二级标题样式 */
+h2 {
+    color: #333; /* 文字颜色为深灰色 */
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    font-size: 1.8rem; /* 字体大小1.8rem */
+    text-align: left; /* 文本左对齐 */
+    background-color: transparent; /* 背景颜色为白色 */
+    padding: 0rem;
+    border-radius: 0rem; 
+}
+/* 6.3 三级标题样式 */
+h3 {
+    color: #333; /* 文字颜色为深灰色 */
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    font-size: 1.5rem; /* 字体大小1.5rem */
+    text-align: left; /* 文本左对齐 */
+    background-color: transparent; /* 背景颜色为浅灰色 */
+    padding: 0rem;
+    border-radius: 0rem; 
+}
+/* 6.4 四级标题样式 */
+h4 {
+    color: #333; /* 文字颜色为深灰色 */
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    font-size: 1.2rem; /* 字体大小1.0rem */
+    text-align: left; /* 文本左对齐 */
+    background-color: transparent;  /* 背景颜色为浅灰色 */
+    padding: 0rem;
+    border-radius: 0rem; 
+}
+
+/* 6.5 段落样式 */
+p {
+    text-align: left; /* 文本左对齐 */
+    color: #333; /* 文字颜色为深灰色 */
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    font-size: 1rem; /* 字体大小1rem */
+    line-height: 1.5rem; /* 行高1.5rem */
+    background-color: transparent; /* 背景颜色透明 */
+    padding: 0.3rem;
+    border-radius: 0rem; 
+    text-indent: 2em; /* 首行缩进两个字符 */
+}

@@ -1,0 +1,74 @@
+/* 基础变量：统一管理样式参数，方便全局调整 */
+:root {
+  --color-primary: #333;      /* 主要文字色（h2-h4、p共用） */
+  --color-black: #000;        /* h1文字色 */
+  --bg-h1: #E6E6FA;           /* h1背景色 */
+  --padding-h1: 1rem;         /* h1内边距 */
+  --radius-h1: 5px;           /* h1圆角 */
+  --font-h1: 2.5rem;          /* h1字号 */
+  --font-h2: 1.8rem;          /* h2字号 */
+  --font-h3: 1.5rem;          /* h3字号 */
+  --font-h4: 1.2rem;          /* h4字号 */
+  --font-p: 1rem;             /* 段落字号 */
+  --line-height-p: 1.5;       /* 段落行高（无单位更适配） */
+  --indent-p: 2em;            /* 段落首行缩进 */
+  --padding-p: 0.3rem;        /* 段落内边距 */
+}
+
+/* 1. 一级标题样式（保留原样式，通过变量统一参数） */
+h1 {
+  color: var(--color-black);
+  font-size: var(--font-h1);
+  text-align: center;
+  background-color: var(--bg-h1);
+  padding: var(--padding-h1);
+  border-radius: var(--radius-h1);
+  margin-top: 0;
+  margin-bottom: 0; /* 保留原margin-bottom:0的设定 */
+}
+
+/* 2. 二级至四级标题（提取公共样式，减少重复） */
+h2, h3, h4 {
+  color: var(--color-primary); /* 共用主文字色 */
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: left;
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* 单独定义各级标题的差异化（仅保留字号） */
+h2 { font-size: var(--font-h2); }
+h3 { font-size: var(--font-h3); }
+h4 { font-size: var(--font-h4); }
+
+/* 3. 段落样式（保留原功能，优化行高适配） */
+p {
+  text-align: left;
+  color: var(--color-primary);
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: var(--font-p);
+  line-height: var(--line-height-p); /* 行高用无单位值，适配不同字体大小 */
+  background-color: transparent;
+  padding: var(--padding-p);
+  border-radius: 0;
+  text-indent: var(--indent-p);
+}
+
+/* 4. 跨系统/浏览器兼容适配（不改变原功能，增强稳定性） */
+/* 修复不同系统字体渲染差异 */
+h1, h2, h3, h4, p {
+  -webkit-font-smoothing: antialiased; /* macOS/iOS 字体抗锯齿 */
+  -moz-osx-font-smoothing: grayscale; /* Firefox 字体渲染优化 */
+}
+
+/* 响应式适配（小屏幕自动调整，避免原样式在手机上溢出） */
+@media (max-width: 768px) {
+  :root {
+    --font-h1: 2rem;    /* 小屏幕h1字号缩小（原2.5rem） */
+    --font-h2: 1.6rem;  /* 小屏幕h2字号缩小（原1.8rem） */
+    --font-h3: 1.4rem;  /* 小屏幕h3字号缩小（原1.5rem） */
+  }
+}

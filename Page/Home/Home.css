@@ -1,0 +1,138 @@
+/* Home.css */
+
+/* 基础样式 */
+.home-container {
+    max-width: 1200px; /* 最大宽度设置为 1200px */
+    margin: 0 auto; /* 水平居中 */
+    padding: 2rem 1.5rem; /* 上下内边距 2rem，左右内边距 1.5rem */
+    font-family: 'Arial', sans-serif; /* 字体使用 Arial 无衬线字体 */
+    color: #333; /* 文字颜色 */
+    line-height: 1.8; /* 行高 */
+}
+
+
+/* 整体logo容器，可按需调整 */
+.logo-container {
+    display: flex; /* 使用flex布局 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    flex-direction: column; /* 垂直排列 */
+}
+/* 专门包裹文字的容器，用于实现居中与底框效果 */
+.centered-text-container {
+    text-align: center; /* 文字居中 */
+    padding: 10px 0; /* 上下内边距，保留文字与下方的间距，可按需调整 */
+    background: linear-gradient(90deg, #FF5E5E, #FFB74D, #4CAF50, #2196F3, #9C27B0); /* 定义渐变色彩 */
+    -webkit-background-clip: text; /* 针对WebKit浏览器的前缀，将背景裁剪为文字形状 */
+    background-clip: text; /* 将背景裁剪为文字形状 */
+    color: transparent; /* 文字颜色设为透明，使渐变背景显现 */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* 简化阴影效果，避免干扰渐变 */
+    font-size: 50px; /* 字体大小 */
+    font-weight: bold; /* 加粗字体，增强效果 */
+    letter-spacing: 3px; /* 字符间距 */
+}
+
+
+/* 核心板块区样式 */
+.core-modules .modules-grid {
+    display: grid; /* 使用网格布局 */
+    grid-template-columns: repeat(4, 1fr); /* 四列布局 */
+    gap: 2rem; /* 网格间距 */
+}
+
+.module-card {
+    background-color: white; /* 背景颜色 */
+    border-radius: 10px; /* 圆角 */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* 阴影 */
+    transition: transform 0.3s ease; /* 过渡效果 */
+    padding: 1rem; /* 内边距 */
+    text-align: center; /* 文字居中 */
+}
+
+.module-card:hover {
+    transform: translateY(-5px); /* 鼠标悬停时向上移动 5px */
+}
+
+.module-card h3 {
+    text-decoration: none; /* 去除下划线 */
+    text-align: center; /* 文字居中 */
+    font-size: 20px; /* 字体大小 */
+    margin: 10px 0; /* 上下外边距 */
+}
+
+.module-card h3 a {
+    text-decoration: none; /* 去除链接的下划线 */
+}
+
+.module-card h3 a:hover {
+    color: yellowgreen;
+    text-decoration: underline; /* 鼠标悬停时显示下划线，可根据需求调整 */
+}
+
+.module-image {
+    margin-bottom: 0.5rem; /* 下方外边距 */
+}
+
+.module-img {
+    width: 100%; /* 宽度 100% */
+    height: 250px; /* 高度 */
+    object-fit: cover; /* 图片填充方式 */
+    border-radius: 8px; /* 圆角 */
+}
+
+.module-link {
+    display: inline-block; /* 行内块级元素 */
+    margin-top: 1rem; /* 上方外边距 */
+    color: #3498db; /* 文字颜色 */
+    text-decoration: none; /* 去除下划线 */
+}
+
+.module-link:hover {
+    text-decoration: underline; /* 鼠标悬停时显示下划线 */
+}
+
+
+/* 底部区域整体样式 */
+.page-footer {
+    margin-top: 18px;
+    background-color: green; /* 设置底部背景颜色，可按需调整 */
+    color: white; /* 文字颜色 */
+    text-align: center; /* 内容居中显示 */
+    padding: 20px; /* 内边距，控制内容与边框的距离 */
+    border: 1px solid green; /* 添加边框，1px为边框宽度，solid为实线样式，#666为边框颜色，均可调整 */
+    width: 100%; /* 确保底部区域占据整个页面宽度，有助于文字居中 */
+}
+
+/* 底部内容容器样式（可按需调整，这里主要是用于进一步细分布局控制等，如果不需要可简化） */
+.footer-content {
+    max-width: 1200px; /* 限制内容宽度，可与整体页面宽度保持一致或按需调整 */
+    margin: 0 auto; /* 水平居中 */
+}
+
+/* 版权声明样式 */
+.copyright {
+    margin: 0; /* 去除上下外边距 */
+    font-size: 18px;
+    text-align: center;
+    font-weight: normal;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+}
+
+.placeholder-text {
+    color: #999; /* 文字颜色 */
+}
+
+/* 响应式适配（手机端） */
+@media (max-width: 768px) {
+    .core-modules .modules-grid {
+        grid-template-columns: repeat(2, 1fr); /* 两列布局 */
+    }
+}
+
+/* 响应式适配（更小屏幕） */
+@media (max-width: 480px) {
+    .core-modules .modules-grid {
+        grid-template-columns: 1fr; /* 一列布局 */
+    }
+}

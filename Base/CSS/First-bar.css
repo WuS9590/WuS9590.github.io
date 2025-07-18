@@ -1,0 +1,61 @@
+/* 2.第一栏：LOGO、官网链接 */
+.first-bar {
+    display: flex; /* 将子元素设置为Flex布局 */
+    justify-content: space-between; /* 将子元素分隔到两端 */
+    width: 100%; /* 宽度为100% */
+    padding: 10px 20px; /* 上下内边距10px，左右内边距20px */
+    background-color: rgba(255, 255, 255, 0.1); /* 半透明白色背景 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+    border-radius: 5px; /* 圆角边框 */
+    position: relative; /* 确保子元素的绝对定位相对于first-bar */
+}
+
+/* 2.1.1 Logo-容器 */
+.first-bar-logo {
+    display: flex; /* 将子元素设置为Flex布局 */
+    align-items: center; /* 将子元素垂直居中 */
+    gap: 10px; /* 增加子元素之间的间距 */
+}
+/* 2.1.2 Logo-文字 */
+.logo {
+    font-size: 2.5em;  /* 设置字体大小 */
+    font-weight: normal;  /* 去除加粗字体 */
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet); /* 五颜六色渐变背景 */
+    background-clip: text; /* 将背景应用到文本上 */
+    -webkit-background-clip: text; /* 适用于 WebKit 浏览器 */
+    -webkit-text-fill-color: transparent; /* 将文本填充颜色设置为透明 */
+    font-family: 'Georgia', serif; /* 使用 Knewave 字体 Knewave, cursive */ 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 添加立体阴影效果 */
+}
+
+/* 2.2.1 官网链接-容器 */
+.icon-circle {
+    position: absolute;
+    right: 60px; /* 距离右侧60px */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* 2.2.2 官网链接-文字 */
+.icon {
+    width: 50px; /* 图标的大小 */
+    height: 50px; /* 图标的大小 */
+    text-align: center;
+    line-height: 30px; /* 使文本垂直居中 */
+    font-size: 20px;
+    color: #333;
+    text-decoration: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', cursive; /* 使用 Montserrat 字体 */
+    font-weight: bold; /* 加粗字体 */
+    margin-right: 25px; /* 图标之间的间距 */
+}
+/* 2.2.3 官网链接-文字-悬停 */
+.icon:hover {
+    color: #ffcc00; /* 悬停时字体颜色变黄 */
+}
