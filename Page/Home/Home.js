@@ -2,9 +2,9 @@
 document.addEventListener("DOMContentLoaded", function() {
     // 定义图片路径（实际图片替换路径即可）
     const images = {
-        knowledgeMap_1: "./images/1.png", // 知识图谱板块图片
-        knowledgeMap_2: "./images/2.png", // 多基因遗传风险评分板块图片
-        placeholder: "./images/3.png" // 占位板块默认图片
+        knowledgeMap_1: "./Images/1.png", // 知识图谱板块图片
+        knowledgeMap_2: "./Images/2.png", // 多基因遗传风险评分板块图片
+        placeholder: "./Images/3.png" // 占位板块默认图片
     };
 
     // 生成首页HTML结构
